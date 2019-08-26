@@ -20,7 +20,7 @@ def test_add_contact(app):
 
 def test_add_empty_contact(app):
     app.session.login(username="admin", password="secret")
-    app.group.create(Contact(first_name="", middlename="", lastname="", nickname="", title="", company="", address="", home="",
+    app.contact.create(Contact(first_name="", middlename="", lastname="", nickname="", title="", company="", address="", home="",
                              mobile_phone="", work_phone="", fax="", email="", adress2="", phone2="", notes=""))
     app.session.logout()
 

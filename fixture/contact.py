@@ -4,7 +4,7 @@ class ContactHelper:
         self.app = app
 
     def create(self, contact):
-        wd = self.wd
+        wd = self.app.wd
         # init contact creation
         wd.find_element_by_link_text("add new").click()
         # fill contact form
@@ -55,4 +55,4 @@ class ContactHelper:
         wd.find_element_by_name("notes").send_keys(contact.notes)
         # submit contact creation
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
-        self.open_home_page()
+        self.app.open_home_page()
