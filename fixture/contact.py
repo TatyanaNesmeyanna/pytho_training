@@ -57,7 +57,7 @@ class ContactHelper:
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         self.app.open_home_page()
 
-    def modify_first_contact(self):
+    def modify_first_contact_name(self):
         wd = self.app.wd
         self.app.open_home_page()
         # select first contact
