@@ -1,13 +1,16 @@
 from selenium import webdriver
-from fixture.manager import HelpersManager
+from fixture.group import GroupHelper
+from fixture.contact import ContactHelper
+from fixture.session import SessionHelper
 
 
 class Application:
     def __init__(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
-        self.manager = HelpersManager(self)
-        self.manager.init_helpers()
+        self.group = GroupHelper(self)
+        self.contact = ContactHelper(self)
+        self.session = SessionHelper(self)
 
     def open_home_page(self):
         wd = self.wd
