@@ -2,6 +2,7 @@ from selenium import webdriver
 from fixture.group import GroupHelper
 from fixture.contact import ContactHelper
 from fixture.session import SessionHelper
+from selenium.common.exceptions import NoSuchElementException
 
 
 class Application:
@@ -23,7 +24,12 @@ class Application:
         except:
             return False
 
-
+    def is_login_page(self):
+        try:
+            self.wd.find_element_by_name("pass")
+            return True
+        except NoSuchElementException:
+            return False
 
     def destroy(self):
         self.wd.quit()

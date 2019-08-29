@@ -6,7 +6,6 @@ def test_modify_first_contact(app):
     app.contact.modify_first_contact(Contact(first_name="modified_name", middlename="", lastname="", nickname="", title="", company="", address="", home="",
                                mobile_phone="", work_phone="", fax="", email="", address2="", phone2="", notes=""))
 
-
 def test_modify_first_contact_name(app):
     app.contact.modify_first_contact(Contact(first_name="second_modified_name"))
 
