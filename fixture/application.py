@@ -8,7 +8,7 @@ from selenium.common.exceptions import NoSuchElementException
 class Application:
     def __init__(self):
         self.wd = webdriver.Firefox()
-        self.wd.implicitly_wait(30)
+        self.wd.implicitly_wait(5)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
         self.session = SessionHelper(self)
