@@ -8,14 +8,15 @@ from selenium.common.exceptions import NoSuchElementException
 class Application:
     def __init__(self):
         self.wd = webdriver.Firefox()
-        self.wd.implicitly_wait(5)
+        self.wd.implicitly_wait(1)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
         self.session = SessionHelper(self)
 
     def open_home_page(self):
         wd = self.wd
-        wd.get("http://localhost/addressbook/")
+        if not (wd.current_url.endswith("/addressbook/")):
+            wd.get("http://localhost/addressbook/")
 
     def is_valid(self):
         try:
