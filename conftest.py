@@ -18,6 +18,6 @@ def app(request):
 def stop(request):
     def fin():
         fixture.session.ensure_logout()
-        fixture.destroy
+        fixture.destroy()
     request.addfinalizer(fin)
     return fixture
