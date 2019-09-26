@@ -1,30 +1,21 @@
 from sys import maxsize
 
 class Contact:
-    def __init__(self, first_name=None, middlename=None, lastname=None, nickname=None, title=None, company=None, address=None, home=None,
-                       mobile_phone=None, work_phone=None, fax=None, email=None, address2=None, phone2=None, notes=None, id=None):
-        self.first_name = first_name
-        self.middlename = middlename
+    def __init__(self, firstname=None, lastname=None, home_phone=None,
+                       mobile_phone=None, work_phone=None,  secondary_phone=None, id=None):
+        self.firstname = firstname
         self.lastname = lastname
-        self.nickname = nickname
-        self.title = title
-        self.company = company
-        self.address = address
-        self.home = home
+        self.home_phone = home_phone
         self.mobile_phone = mobile_phone
         self.work_phone = work_phone
-        self.fax = fax
-        self.email = email
-        self.address2 = address2
-        self.phone2 = phone2
-        self.notes = notes
-        self.id= id
+        self.secondary_phone = secondary_phone
+        self.id = id
 
     def __repr__(self):
-        return "%s:%s:%s" % (self.first_name, self.lastname, self.id)
+        return "%s:%s:%s" % (self.firstname, self.lastname, self.id)
 
     def __eq__(self, other):
-        return ((self.id is None or other.id is None or self.id == other.id) and (self.first_name == other.first_name) and (self.lastname == other.lastname))
+        return ((self.id is None or other.id is None or self.id == other.id) and (self.firstname == other.firstname) and (self.lastname == other.lastname))
 
     def id_or_max(self):
         if self.id:
