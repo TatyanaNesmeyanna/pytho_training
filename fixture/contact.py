@@ -133,10 +133,10 @@ class ContactHelper:
         wd = self.app.wd
         self.open_contact_view_by_index(index)
         text = wd.find_element_by_id("content").text
-        home_phone = re.search("H: (.*)", text).group(1)
-        work_phone = re.search("W: (.*)", text).group(1)
-        mobile_phone = re.search("M: (.*)", text).group(1)
-        secondary_phone = re.search("P: (.*)", text).group(1)
+        home_phone= re.search("H: (.*)", text).group(1) if re.search("H: (.*)", text) else ""
+        work_phone = re.search("W: (.*)", text).group(1) if re.search("W: (.*)", text) else ""
+        mobile_phone = re.search("M: (.*)", text).group(1) if re.search("M: (.*)", text) else ""
+        secondary_phone = re.search("P: (.*)", text).group(1) if re.search("P: (.*)", text) else ""
         return(Contact(home_phone=home_phone, mobile_phone=mobile_phone, work_phone=work_phone, secondary_phone=secondary_phone, id=id))
 
 
