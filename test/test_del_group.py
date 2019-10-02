@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from model.group import Group
 from random import randrange
+import pytest
 
 
 def test_delete_some_group(app):
