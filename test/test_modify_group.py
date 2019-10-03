@@ -10,7 +10,6 @@ import random
 #     new_groups = app.group.get_group_list()
 #     assert len(old_groups) == len(new_groups)
 
-
 def test_modify_group_name(app, db):
     if len(db.get_group_list()) == 0:
         app.group.create(Group(name="test"))

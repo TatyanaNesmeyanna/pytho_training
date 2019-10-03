@@ -6,8 +6,6 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
-
-
     def create(self, contact):
         wd = self.app.wd
         # init contact creation
@@ -35,6 +33,24 @@ class ContactHelper:
         self.app.open_home_page()
         self.contact_cache = None
 
+    def modify_contact_by_id(self, id, new_contact_data):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_id(id)
+        # open modification form
+        table_rows = wd.find_elements_by_tag_name("tr")
+        input_el = wd.find_element_by_css_selector("input[value='%s']" % id)
+        cell = input_el.find_element_by_xpath('..')
+        row = cell.find_element_by_xpath('..')
+        edit_index = table_rows.index(row)-1
+        wd.find_elements_by_xpath("//img[ @ alt = 'Edit']")[edit_index].click()
+        # fill contact form
+        self.fill_contact_form(new_contact_data)
+        # submit modification
+        wd.find_element_by_name("update").click()
+        self.app.open_home_page()
+        self.contact_cache = None
+
     def select_first_contact(self):
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
@@ -46,6 +62,7 @@ class ContactHelper:
     def select_contact_by_id(self, id):
         wd = self.app.wd
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
 
     def fill_contact_form(self, contact):
         wd = self.app.wd
