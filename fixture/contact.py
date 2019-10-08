@@ -171,6 +171,16 @@ class ContactHelper:
         secondary_phone = re.search("P: (.*)", text).group(1) if re.search("P: (.*)", text) else ""
         return(Contact(home_phone=home_phone, mobile_phone=mobile_phone, work_phone=work_phone, secondary_phone=secondary_phone, id=id))
 
+    def add_contact_to_group(self, contact, group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_id(contact.id).click()
+        wd.find_element_by_name("to_group").click()
+        wd.find_element_by_xpath('//select[@name="to_group"]//option[@ value="%s"]' % group.id ).click()
+        wd.find_element_by_name("to_group").click()
+        wd.find_element_by_name("add").click()
+        wd.find_element_by_link_text("group page \""+group.name+"\"").click()
+
 
 
 
