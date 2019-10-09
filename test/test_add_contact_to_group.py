@@ -6,6 +6,8 @@ import random
 
 def test_add_contact_to_group(app):
     db = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
+    contact_for_test = None
+    group_for_test = None
     if len(db.get_group_list()) == 0:
         group_for_test = Group(name="test_group")
         app.group.create(group_for_test)
