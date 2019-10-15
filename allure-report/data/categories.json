@@ -1,0 +1,39 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "pony.orm.core.BindingError: Database object was already bound to MySQL provider",
+      "children" : [ {
+        "name" : "test_check_all_contacts_data",
+        "uid" : "1136b07f43e9d68b",
+        "parentUid" : "7c8f134f9a0d5a4c4911083b2e1859db",
+        "status" : "broken",
+        "time" : {
+          "start" : 1571119295377,
+          "stop" : 1571119298614,
+          "duration" : 3237
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_delete_contact_from_group",
+        "uid" : "19a6a81935fd5a11",
+        "parentUid" : "7c8f134f9a0d5a4c4911083b2e1859db",
+        "status" : "broken",
+        "time" : {
+          "start" : 1571119305599,
+          "stop" : 1571119305600,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7c8f134f9a0d5a4c4911083b2e1859db"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

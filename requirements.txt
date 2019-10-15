@@ -6,3 +6,5 @@ pony
 pymysql
 mysql-connector-python-rf
 robotframework-python3
+allure-pytest
+lxml

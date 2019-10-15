@@ -3,6 +3,8 @@ from fixture.orm import ORMFixture
 from model.contact import Contact
 from model.group import Group
 import random
+import pytest
+import allure
 
 def test_delete_contact_from_group(app):
     db = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
@@ -35,10 +37,13 @@ def test_delete_contact_from_group(app):
          contact_for_test = random.choice(db.get_contact_list())
          group_for_test = random.choice(db.get_group_list())
          app.contact.add_contact_to_group(contact_for_test, group_for_test)
-    old_contact_list_in_group = db.get_contacts_in_group(group_for_test)
-    app.contact.delete_contact_from_group(contact_for_test, group_for_test)
-    new_contact_list_in_group = db.get_contacts_in_group(group_for_test)
-    assert len(new_contact_list_in_group) == len(old_contact_list_in_group)-1
-    old_contact_list_in_group.remove(contact_for_test)
-    assert sorted(old_contact_list_in_group, key = Contact.id_or_max) == sorted(new_contact_list_in_group, key = Contact.id_or_max)
+    with allure.step('Given contacts in groups list'):
+        old_contact_list_in_group = db.get_contacts_in_group(group_for_test)
+    with allure.step('When I delete a contact %s from the gtoup %s' % (group_for_test , contact_for_test)):
+        app.contact.delete_contact_from_group(contact_for_test, group_for_test)
+    with allure.step('Then the the contact %s  is not in this group %s ' % (group_for_test , contact_for_test)):
+        new_contact_list_in_group = db.get_contacts_in_group(group_for_test)
+        assert len(new_contact_list_in_group) == len(old_contact_list_in_group)-1
+        old_contact_list_in_group.remove(contact_for_test)
+        assert sorted(old_contact_list_in_group, key = Contact.id_or_max) == sorted(new_contact_list_in_group, key = Contact.id_or_max)
 

@@ -1,0 +1,134 @@
+{
+  "uid" : "19a6a81935fd5a11",
+  "name" : "test_delete_contact_from_group",
+  "fullName" : "test.test_delete_contact_from_group#test_delete_contact_from_group",
+  "historyId" : "dbe4bf731f096ead8203bf111dd34c8a",
+  "time" : {
+    "start" : 1571119305599,
+    "stop" : 1571119305600,
+    "duration" : 1
+  },
+  "status" : "broken",
+  "statusMessage" : "pony.orm.core.BindingError: Database object was already bound to MySQL provider",
+  "statusTrace" : "app = <fixture.application.Application object at 0x00000227CE456438>\n\n    def test_delete_contact_from_group(app):\n>       db = ORMFixture(host=\"127.0.0.1\", name=\"addressbook\", user=\"root\", password=\"\")\n\ntest\\test_delete_contact_from_group.py:10: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nfixture\\orm.py:34: in __init__\n    self.db.bind('mysql', host=host, database=name, user=user, password=password)\nenv\\lib\\site-packages\\pony\\orm\\core.py:765: in bind\n    self._bind(*args, **kwargs)\nenv\\lib\\site-packages\\pony\\orm\\core.py:769: in _bind\n    throw(BindingError, 'Database object was already bound to %s provider' % self.provider.dialect)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nexc_type = <class 'pony.orm.core.BindingError'>, args = ('Database object was already bound to MySQL provider',)\nkwargs = {}\n\n    def throw(exc_type, *args, **kwargs):\n        if isinstance(exc_type, Exception):\n            assert not args and not kwargs\n            exc = exc_type\n        else: exc = exc_type(*args, **kwargs)\n        exc.__cause__ = None\n        try:\n            if not (pony.MODE == 'INTERACTIVE' and options.CUT_TRACEBACK):\n>               raise exc\nE               pony.orm.core.BindingError: Database object was already bound to MySQL provider\n\nenv\\lib\\site-packages\\pony\\utils\\utils.py:106: BindingError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1571119263512,
+      "stop" : 1571119263512,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1571119263503,
+      "stop" : 1571119263511,
+      "duration" : 8
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1571119305526,
+      "stop" : 1571119305599,
+      "duration" : 73
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1571119319436,
+      "stop" : 1571119320617,
+      "duration" : 1181
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1571119320618,
+      "stop" : 1571119320618,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_delete_contact_from_group"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-PPFJMEO"
+  }, {
+    "name" : "thread",
+    "value" : "5648-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_delete_contact_from_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "19a6a81935fd5a11.json",
+  "parameterValues" : [ ]
+}

@@ -46,53 +46,5 @@
     "mobile_phone": "949-24-18--5-9",
     "secondary_phone": "63-0-6-701-1-74",
     "work_phone": "718-644--34"
-  },
-  {
-    "py/object": "model.contact.Contact",
-    "address": null,
-    "all_emails_from_home_page": null,
-    "all_phones_from_home_page": null,
-    "email1": null,
-    "email2": null,
-    "email3": null,
-    "firstname": "FirstNameav5i",
-    "home_phone": "1-82-193-50-",
-    "id": null,
-    "lastname": "LastNameEg93zD",
-    "mobile_phone": "914-373-71-23-26",
-    "secondary_phone": "89-2-71",
-    "work_phone": "1-1-50-710"
-  },
-  {
-    "py/object": "model.contact.Contact",
-    "address": null,
-    "all_emails_from_home_page": null,
-    "all_phones_from_home_page": null,
-    "email1": null,
-    "email2": null,
-    "email3": null,
-    "firstname": "FirstNamessqdb",
-    "home_phone": "9-522-081-1",
-    "id": null,
-    "lastname": "LastNameTWOFzi2u",
-    "mobile_phone": "8-2--6-279",
-    "secondary_phone": "96-2-0-94-",
-    "work_phone": "4-470-7-9-02-970"
-  },
-  {
-    "py/object": "model.contact.Contact",
-    "address": null,
-    "all_emails_from_home_page": null,
-    "all_phones_from_home_page": null,
-    "email1": null,
-    "email2": null,
-    "email3": null,
-    "firstname": "FirstName7ozw",
-    "home_phone": "58-5-7-81-7",
-    "id": null,
-    "lastname": "LastName2O",
-    "mobile_phone": "6-3-536---2-908",
-    "secondary_phone": "---10-861-62-6",
-    "work_phone": "25-5-8--66-"
   }
 ]
